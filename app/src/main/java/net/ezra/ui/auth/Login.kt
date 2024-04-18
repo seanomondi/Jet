@@ -39,18 +39,18 @@ fun LoginScreen(navController: NavController) {
         val (refHeader, refEmail, refPassword, refButtonLogin, refTextSignup) = createRefs()
         val spacing = MaterialTheme.spacing
 
-        Box(
-            modifier = Modifier
-                .constrainAs(refHeader) {
-                    top.linkTo(parent.top, spacing.extraLarge)
-                    start.linkTo(parent.start)
-                    end.linkTo(parent.end)
-                    width = Dimension.fillToConstraints
-                }
-                .wrapContentSize()
-        ) {
-            AuthHeader()
-        }
+//        Box(
+//            modifier = Modifier
+//                .constrainAs(refHeader) {
+//                    top.linkTo(parent.top, spacing.extraLarge)
+//                    start.linkTo(parent.start)
+//                    end.linkTo(parent.end)
+//                    width = Dimension.fillToConstraints
+//                }
+//                .wrapContentSize()
+//        ) {
+//            AuthHeader()
+//        }
 
 
         TextField(

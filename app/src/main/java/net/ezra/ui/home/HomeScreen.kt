@@ -1,5 +1,6 @@
 package net.ezra.ui.home
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
@@ -9,6 +10,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -25,43 +27,39 @@ import net.ezra.navigation.ROUTE_CONTACT
 import net.ezra.navigation.ROUTE_EVENING
 import net.ezra.navigation.ROUTE_PRODUCTS
 import net.ezra.navigation.ROUTE_SHOP
-
 import net.ezra.R
 import net.ezra.navigation.ROUTE_ADD_STUDENTS
+import net.ezra.navigation.ROUTE_VIEW_STUDENTS
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
 
     Column(
         modifier = Modifier
-            .fillMaxWidth()
+            .background(Color.White)
+            .fillMaxSize()
             .wrapContentHeight()
             .padding(10.dp)
-            .padding(top = 10.dp)
+            .padding(top = 10.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
 
     ){
-        Text(text = stringResource(id = R.string.mit))
-        Text(text = "this is the homepage")
+//        Text(text = stringResource(id = R.string.mit))
+        Text(text = "THIS IS THE HOMEPAGE")
 
-        Text(
-            modifier = Modifier
-                .clickable {
-                    navController.navigate(ROUTE_ABOUT) {
-                        popUpTo(ROUTE_HOME) { inclusive = true }
-                    }
-                },
-            text = "about"
-        )
+        Spacer(modifier = Modifier.height(10.dp))
 
-        Button(onClick = {
-            navController.navigate(ROUTE_ABOUT) {
-                popUpTo(ROUTE_HOME) { inclusive = true }
-            }
-        }) {
+//        Text(
+//            modifier = Modifier
+//                .clickable {
+//                    navController.navigate(ROUTE_ABOUT) {
+//                        popUpTo(ROUTE_HOME) { inclusive = true }
+//                    }
+//                },
+//            text = "about"
+//        )
 
-            Text(text = "sketchy about")
 
-        }
 
         Text(
             modifier = Modifier
@@ -70,18 +68,20 @@ fun HomeScreen(navController: NavHostController) {
                         popUpTo(ROUTE_HOME) { inclusive = true }
                     }
                 },
-            text = "Contact"
+            text = "go to contact screen"
         )
 
-        Card(
-            colors = CardDefaults.cardColors(Color(0xffE52C04)),
-            elevation = CardDefaults.cardElevation(5.dp)
+        Spacer(modifier = Modifier.height(10.dp))
 
-        ) {
-
-
-
-        }
+//        Card(
+//            colors = CardDefaults.cardColors(Color(0xffE52C04)),
+//            elevation = CardDefaults.cardElevation(5.dp)
+//
+//        ) {
+//
+//
+//
+//        }
 
 
         Text(
@@ -95,27 +95,22 @@ fun HomeScreen(navController: NavHostController) {
 
         )
 
-        Button(onClick = {
-            navController.navigate(ROUTE_MIT) {
-                popUpTo(ROUTE_HOME) { inclusive = true }
-            }}) {
 
-            Text(text = "fuurye")
 
-        }
+//        Text(
+//            modifier = Modifier
+//
+//                .clickable {
+//                    navController.navigate(ROUTE_MIT) {
+//                        popUpTo(ROUTE_HOME) { inclusive = true }
+//                    }
+//                },
+//            text = "go to mit",
+//            textAlign = TextAlign.Center,
+//            color = MaterialTheme.colorScheme.onSurface
+//        )
 
-        Text(
-            modifier = Modifier
-
-                .clickable {
-                    navController.navigate(ROUTE_MIT) {
-                        popUpTo(ROUTE_HOME) { inclusive = true }
-                    }
-                },
-            text = "go to mit",
-            textAlign = TextAlign.Center,
-            color = MaterialTheme.colorScheme.onSurface
-        )
+        Spacer(modifier = Modifier.height(10.dp))
 
         Text(
             modifier = Modifier
@@ -128,10 +123,21 @@ fun HomeScreen(navController: NavHostController) {
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onSurface
         )
-        
+
         Spacer(modifier = Modifier.height(10.dp))
 
+        OutlinedButton(onClick = {
+            navController.navigate(ROUTE_ABOUT) {
+                popUpTo(ROUTE_HOME) { inclusive = true }
+            }
+        }) {
 
+            Text(text = "About")
+
+        }
+
+
+        Spacer(modifier = Modifier.height(10.dp))
         
         OutlinedButton(onClick = {
 
@@ -144,6 +150,22 @@ fun HomeScreen(navController: NavHostController) {
             Text(text = "Add Students")
 
         }
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        OutlinedButton(onClick = {
+
+            navController.navigate(ROUTE_VIEW_STUDENTS) {
+                popUpTo(ROUTE_HOME) { inclusive = true }
+            }
+
+        }) {
+
+            Text(text = "View Students")
+
+        }
+
+
 
 
 

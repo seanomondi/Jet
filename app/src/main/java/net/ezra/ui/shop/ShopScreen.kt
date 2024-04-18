@@ -2,12 +2,14 @@ package net.ezra.ui.shop
 
 
 import android.content.res.Configuration
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,7 +27,11 @@ import net.ezra.ui.theme.AppTheme
 @Composable
 fun ShopScreen(navController: NavHostController) {
 
-    Column {
+    Column(
+        modifier = Modifier
+            .background(Color.White)
+            .fillMaxSize()
+    ) {
         
         Text(text = "This is the shop screen")
         

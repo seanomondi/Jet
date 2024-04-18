@@ -1,6 +1,7 @@
 package net.ezra.ui.products
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
@@ -30,13 +31,15 @@ fun ProductsScreen(navController: NavHostController) {
 
     Column(
         modifier = Modifier
-            .fillMaxWidth()
+
+            .background(Color.White)
+            .fillMaxSize()
             .wrapContentHeight()
             .padding(10.dp)
             .padding(top = 10.dp)
 
     ){
-        Text(text = "this is the product screen")
+        Text(text = "this is the products screen")
 
         Text(
             modifier = Modifier
