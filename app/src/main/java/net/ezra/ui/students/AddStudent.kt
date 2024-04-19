@@ -185,7 +185,7 @@ fun AddStudents(navController: NavHostController) {
                 OutlinedButton(onClick = {
 
                     navController.navigate(ROUTE_VIEW_STUDENTS) {
-                        popUpTo(ROUTE_HOME) { inclusive = true }
+                        popUpTo(ROUTE_ADD_STUDENTS) { inclusive = true }
                     }
 
                 }) {
